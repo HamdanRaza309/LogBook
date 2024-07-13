@@ -7,9 +7,9 @@ const port = 3000;
 // Connect to MongoDB
 connectToMongo();
 
-app.get('/', (req, res) => {    // endpoint
-    res.send('Hello World!')
-})
+// Available Routes
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/notes', require('./routes/notes'))
 
 // Your other app setup code here
 
