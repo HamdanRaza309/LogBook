@@ -1,5 +1,5 @@
-import { type } from '@testing-library/user-event/dist/type';
-import mongoose from 'mongoose';
+const { type } = require('@testing-library/user-event/dist/type');
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({

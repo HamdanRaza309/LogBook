@@ -7,6 +7,9 @@ const port = 3000;
 // Connect to MongoDB
 connectToMongo();
 
+// Middleware
+app.use(express.json())
+
 // Available Routes
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
