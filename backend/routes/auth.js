@@ -1,7 +1,11 @@
 const express = require('express');
 const User = require("../models/User");
 const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
+
+const JWT_SECRET = "hamdanrazaisalsokhanarman"
 
 // Creating a User using: POST "/api/auth/createuser". No login require 
 router.post('/createuser', [
@@ -24,13 +28,28 @@ router.post('/createuser', [
         }
 
         // Create a new user
+        // Password Security: Generating Hash with Salt
+        const salt = await bcrypt.genSalt(10);
+        const securePassword = await bcrypt.hash(req.body.password, salt);
+
         user = await User.create({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password,
+            password: securePassword,
         })
-        // Display userData in json format
-        res.json(user)
+
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+        // console.log(data.user)
+
+        // Generate Java Web Token
+        const authToken = jwt.sign(data, JWT_SECRET);
+        // console.log(authToken)
+        // Display authToken in json format
+        res.json({ authToken: authToken })
     } catch (error) {
         console.error(error.message);
         res.status(500).send('Some Error occured')
