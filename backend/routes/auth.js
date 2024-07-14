@@ -45,7 +45,7 @@ router.post('/createuser', [
         }
         // console.log(data.user)
 
-        // Generate Java Web Token
+        // Generate Java Web Token, as the user signUp he will receive authToken
         const authToken = jwt.sign(data, JWT_SECRET);
         // console.log(authToken)
         // Display authToken in json format
@@ -56,4 +56,49 @@ router.post('/createuser', [
     }
 });
 
+
+// Creating a User using: POST "/api/auth/login". No login require 
+router.post('/login', [
+    // validations
+    body('email', 'Enter a valid Email').isEmail(),
+    body('password', 'Password can not be blank').exists(),
+], async (req, res) => {
+    // If there are errors, return bad requests and the errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    // Destructuring
+    const { email, password } = req.body;
+    try {
+        // checks if user exists in database or not
+        let user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ error: 'Please try to login with correct credentials' })
+        }
+
+        const passwordCompare = await bcrypt.compare(password, user.password);
+        if (!passwordCompare) {
+            return res.status(400).json({ error: 'Please try to login with correct credentials' })
+        }
+
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+        // console.log(data.user)
+
+        // Generate Java Web Token, as the user signUp he will receive authToken
+        const authToken = jwt.sign(data, JWT_SECRET);
+        // console.log(authToken)
+        // Display authToken in json format
+        res.json({ authToken: authToken })
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Some Error occured')
+    }
+});
 module.exports = router;
