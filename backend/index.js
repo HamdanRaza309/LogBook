@@ -17,5 +17,5 @@ app.use('/api/notes', require('./routes/notes'))
 // Your other app setup code here
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`logBook Backend Listening at http://localhost:${port}`);
 });
