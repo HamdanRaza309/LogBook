@@ -25,6 +25,7 @@ const NoteState = (props) => {
     // Add a Note
     const addNote = async (title, description, tag) => {
         // API Call
+        // 'Accept':'application/json'
 
         console.log('Adding a new Note');
         const note = {
@@ -42,14 +43,15 @@ const NoteState = (props) => {
 
     // Delete Note
     const deleteNote = async (id) => {
+        // API Call
         const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
             method: 'DELETE',
             headers: {
-                "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY5MzcxZTZhNzY4MzZkMzkwNjJjMTZkIn0sImlhdCI6MTcyMTAxNTMzNX0.rlV4_zVH2becqpHo0EzfHrLn85G1cirl_97OP9WFDb0"
+                'Content-Type': 'application/json',
+                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzMWRjNWUzZTQwMzdjZDQ3MzRhMDY2In0sImlhdCI6MTYzMDY2OTU5Nn0.hJS0hx6I7ROugkqjL2CjrJuefA3pJi-IU5yGUbRHI4Q"
             }
         });
-        const json = await response.json();
+        const json = response.json();
         console.log(json)
 
         console.log('Delete Note using id ' + id);

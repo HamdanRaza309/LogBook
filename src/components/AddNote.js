@@ -27,9 +27,9 @@ export default function AddNote() {
                     <label htmlFor="description">Description</label>
                     <input type="text" className="form-control" id="description" name='description' onChange={handleOnChange} />
                 </div>
-                <div className="form-group form-check">
-                    <input type="checkbox" className="form-check-input" id="exampleCheck1" onChange={handleOnChange} />
-                    <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                <div className="mb-3">
+                    <label htmlFor="tag" className="form-label">Tag</label>
+                    <input type="text" className="form-control" id="tag" name="tag" onChange={handleOnChange} />
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={handleOnClick}>Add Note</button>
             </form>
