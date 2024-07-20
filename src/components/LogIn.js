@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const LogIn = (props) => {
 
@@ -34,19 +34,52 @@ export const LogIn = (props) => {
     }
 
     return (
-        <div className="container my-">
-            <h1 className='mb-3'>Log in to proceed to logBook</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" name='email' id="email" value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
+        <div className="container d-flex justify-content-center align-items-center min-vh-100">
+            {/* Login Container */}
+            <div className="row border rounded-5 p-3 bg-white shadow box-area">
+                {/* Left Box */}
+                <div
+                    className="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+                    style={{ background: '#103cbe' }}
+                >
+                    <div className="featured-image mb-3">
+                        <img src="/login.png" className="img-fluid" style={{ width: '250px' }} alt="featured" />
+                    </div>
+                    <p className="text-white fs-2" style={{ fontFamily: "'Courier New', Courier, monospace", fontWeight: 600 }}>
+                        Be Verified
+                    </p>
+                    <small
+                        className="text-white text-wrap text-center"
+                        style={{ width: '17rem', fontFamily: "'Courier New', Courier, monospace" }}
+                    >
+                        Log in to proceed to logBook
+                    </small>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" name='password' id="password" value={credentials.password} onChange={onChange} />
+
+                {/* Right Box */}
+                <div className="col-md-6 right-box">
+                    <div className="row align-items-center">
+                        <div className="header-text mb-4">
+                            <h2>Hello, Again</h2>
+                            <p>We are happy to have you back.</p>
+                        </div>
+                        <form onSubmit={handleSubmit}>
+                            <div className="input-group mb-3">
+                                <input type="email" className="form-control form-control-lg bg-light fs-6" name='email'
+                                    id="email" placeholder="Email address" value={credentials.email} onChange={onChange}
+                                    aria-describedby="emailHelp" />
+                            </div>
+                            <div className="input-group mb-1">
+                                <input type="password" className="form-control form-control-lg bg-light fs-6" name='password'
+                                    id="password" placeholder="Password" value={credentials.password} onChange={onChange} />
+                            </div>
+                            <div className="input-group mb-3">
+                                <button type="submit" className="btn btn-lg btn-primary w-100 fs-6">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
-    )
-}
+    );
+};
