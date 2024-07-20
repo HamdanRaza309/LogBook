@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const SignUp = (props) => {
 
@@ -37,27 +37,48 @@ export const SignUp = (props) => {
     }
 
     return (
-        <div className="container my-3">
-            <h1 className='mb-3'>Create an account use logBook</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Username</label>
-                    <input type="text" className="form-control" name='name' id="name" value={credentials.name} onChange={onChange} minLength={5} required />
+        <div className="container">
+            <div className="myCard">
+                <div className="row">
+                    <div className="col-md-6">
+                        <div className="myLeftCtn">
+                            <form onSubmit={handleSubmit} className="myForm text-center">
+                                <header>Create new account</header>
+                                <div className="form-group">
+                                    <i className="fas fa-user"></i>
+                                    <input type="text" className="myInput" name='name' id="name" placeholder="Username"
+                                        value={credentials.name} onChange={onChange} minLength={5} required />
+                                </div>
+
+                                <div className="form-group">
+                                    <i className="fas fa-envelope"></i>
+                                    <input type="email" className="myInput" placeholder="Email" name='email' id="email"
+                                        value={credentials.email} onChange={onChange} aria-describedby="emailHelp"
+                                        required />
+                                </div>
+
+                                <div className="form-group">
+                                    <i className="fas fa-lock"></i>
+                                    <input type="password" className="myInput" name='password' id="password"
+                                        placeholder="Password" value={credentials.password} onChange={onChange}
+                                        minLength={5} required />
+                                </div>
+                                <button type="submit" className="butt">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="myRightCtn">
+                            <div className="box">
+                                <header>Welcome to logBook!</header>
+
+                                <p> Effortlessly store, access, and manage your notes anytime, anywhere.</p>
+                                <Link className="butt_out" to='/about'>About Us</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" name='email' id="email" value={credentials.email} onChange={onChange} aria-describedby="emailHelp" required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" name='password' id="password" value={credentials.password} onChange={onChange} minLength={5} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="cpassword" className="form-label">Confirm Password</label>
-                    <input type="password" className="form-control" name='cpassword' id="cpassword" value={credentials.cpassword} onChange={onChange} minLength={5} required />
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
     )
 }
