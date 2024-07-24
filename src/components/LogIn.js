@@ -34,7 +34,7 @@ export const LogIn = (props) => {
     }
 
     return (
-        <div className="container d-flex justify-content-center align-items-center min-vh-100">
+        <div className="custom-container d-flex justify-content-center align-items-center min-vh-100">
             {/* Login Container */}
             <div className="row border rounded-5 p-3 bg-white shadow box-area">
                 {/* Left Box */}
@@ -74,7 +74,7 @@ export const LogIn = (props) => {
                                     id="password" placeholder="Password" value={credentials.password} onChange={onChange} />
                             </div>
                             <div className="input-group mb-3">
-                                <button type="submit" className="btn btn-lg btn-primary w-100 fs-6">Submit</button>
+                                <button type="submit" className="btn btn-lg btn-primary w-100 fs-6">Login</button>
                             </div>
                         </form>
                     </div>

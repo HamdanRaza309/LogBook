@@ -63,7 +63,7 @@ export const SignUp = (props) => {
                                         placeholder="Password" value={credentials.password} onChange={onChange}
                                         minLength={5} required />
                                 </div>
-                                <button type="submit" className="butt">Submit</button>
+                                <button type="submit" className="butt">Signup</button>
                             </form>
                         </div>
                     </div>
