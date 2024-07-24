@@ -43,7 +43,7 @@ export const SignUp = (props) => {
                     <div className="col-md-6">
                         <div className="myLeftCtn">
                             <form onSubmit={handleSubmit} className="myForm text-center">
-                                <header>Create new account</header>
+                                <header style={{ color: '#ff9770 ', fontWeight: 'bold' }}>Create new account</header>
                                 <div className="form-group">
                                     <i className="fas fa-user"></i>
                                     <input type="text" className="myInput" name='name' id="name" placeholder="Username"
@@ -63,7 +63,9 @@ export const SignUp = (props) => {
                                         placeholder="Password" value={credentials.password} onChange={onChange}
                                         minLength={5} required />
                                 </div>
-                                <button type="submit" className="butt">Signup</button>
+                                <button type="submit" className="btn btn-lg btn-primary w-50 fs-6">Signup</button>
+                                <br />
+                                <small>Alreay have account? <Link to='/login'>Login</Link></small>
                             </form>
                         </div>
                     </div>
@@ -73,7 +75,7 @@ export const SignUp = (props) => {
                                 <header>Welcome to logBook!</header>
 
                                 <p> Effortlessly store, access, and manage your notes anytime, anywhere.</p>
-                                <Link className="butt_out" to='/about'>About Us</Link>
+                                <Link className="butt_out w-50 fs-6" to='/about'>About Us</Link>
                             </div>
                         </div>
                     </div>

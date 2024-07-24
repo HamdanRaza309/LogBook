@@ -20,7 +20,7 @@ export default function AddNote(props) {
 
     return (
         <div className="container my-3">
-            <h1>Add a Note:</h1>
+            <h2 style={{ color: '#ff9770 ', fontWeight: 'bold' }}>Add a Note</h2>
             <form>
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="username" name='title' placeholder="Username"

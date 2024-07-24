@@ -1,33 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* General Styles */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fbf3ff;
+    background: #fffaff; /* Updated */
 }
 
+/* About */
+.about-us {
+    color: #333;
+  }
+  
+  .hero {
+    background-color: #70d6ff; /* Hero section background color */
+    color: #fff; /* Text color */
+  }
+  
+  .mission, .history {
+    color: #333;
+  }
+  
+  .team img {
+    border-radius: 50%;
+  }
+  
+  .team .card {
+    border: none;
+  }
+  
+  .team .card-body {
+    text-align: center;
+  }
+  
+  .contact {
+    background-color: #e9ff70; /* Contact section background color */
+  }
+  
+  .contact a {
+    color: #ff70a6; /* Contact email color */
+    text-decoration: none;
+  }
+  
 /* Form Floating */
 .form-floating > label {
-    color: black;
-    transition: .5s;
+    color: #000; /* Updated */
+    transition: .3s;
 }
 
 .form-floating > input {
     background: transparent;
-    color: black;
+    color: #1e1b18; /* Updated */
 }
 
 .form-floating > input:focus {
-    color: black;
-    background: #fbf3ff;
-    border-color: white !important;
+    color: #1e1b18; /* Updated */
+    background: #fffaff; /* Updated */
+    border-color: #f0edf0 !important; /* Updated */
     box-shadow: none;
 }
 
@@ -35,8 +61,8 @@ body {
 .form-floating > input:not(:placeholder-shown) ~ label {
     left: -0.75rem;
     font-size: 0.75rem;
-    color: black;
-    background: #fbf3ff;
+    color: #ff9770; /* Updated */
+    background: #fffaff; /* Updated */
 }
 
 /* Container */
@@ -68,7 +94,7 @@ body {
 }
 
 .myLeftCtn header {
-    color: #0d6efd;
+    color: #0a2463; /* Updated */
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -93,7 +119,7 @@ body {
 }
 
 .myLeftCtn .butt {
-    background: linear-gradient(45deg, #0d6efd, rgb(16, 60, 190));
+    background: linear-gradient(45deg, #3e92cc, #0a2463); /* Updated */
     color: #fff;
     width: 100%;
     max-width: 230px;
@@ -105,7 +131,7 @@ body {
 }
 
 .myLeftCtn .butt:hover {
-    background: linear-gradient(45deg, #0b5ed7, #103cbe);
+    background: linear-gradient(45deg, #2e7dc3, #083d73); /* Updated */
 }
 
 .myLeftCtn .butt:focus {
@@ -114,13 +140,13 @@ body {
 
 .myLeftCtn .fas {
     position: relative;
-    color: #0d6efd;
+    color: #ff9770; /* Updated */
     left: 36px;
 }
 
 /* Right Box */
 .myRightCtn {
-    background-image: linear-gradient(45deg, #0d6efd, rgb(16, 60, 190));
+    background-image: linear-gradient(45deg, #3e92cc, #0a2463); /* Updated */
     border-radius: 25px;
     height: 100%;
     padding: 25px;
@@ -144,23 +170,31 @@ body {
 .butt_out {
     background: transparent;
     color: #fff;
-    width: 120px;
+    width: 130px;
     border: 2px solid #fff;
     border-radius: 25px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
     text-decoration: none;
-    font-weight: bolder;
 }
 
 .butt_out:hover {
-    border-color: #eecbff;
+    font-weight: bolder;
+    color: #fff;
 }
 
 .butt_out:focus {
     outline: none;
 }
 
+.btn-primary:hover{
+    font-weight: bolder;
+    color: #fff;
+}
+.btn-light:hover{
+    font-weight: bolder;
+    color: #000000;
+}
 /* Placeholder Styling */
 ::placeholder {
     font-size: 16px;

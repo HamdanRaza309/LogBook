@@ -60,7 +60,7 @@ export const LogIn = (props) => {
                 <div className="col-md-6 right-box">
                     <div className="row align-items-center">
                         <div className="header-text mb-4">
-                            <h2>Hello, Again</h2>
+                            <h2 style={{ color: '#ff9770 ', fontWeight: 'bold' }}>Hello, Again</h2>
                             <p>We are happy to have you back.</p>
                         </div>
                         <form onSubmit={handleSubmit}>
@@ -76,6 +76,7 @@ export const LogIn = (props) => {
                             <div className="input-group mb-3">
                                 <button type="submit" className="btn btn-lg btn-primary w-100 fs-6">Login</button>
                             </div>
+                            <small>Create new <Link to='/signup'>account</Link></small>
                         </form>
                     </div>
                 </div>

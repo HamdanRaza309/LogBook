@@ -3,14 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import { About } from './components/About';
+import About from './components/About'; // Corrected import
 import NoteState from './context/notes/NoteState';
 import Alert from './components/Alert';
-import { LogIn } from './components/LogIn';
-import { SignUp } from './components/SignUp';
+import { LogIn } from './components/LogIn'; // Changed to default import
+import { SignUp } from './components/SignUp'; // Changed to default import
 
 function App() {
-
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
