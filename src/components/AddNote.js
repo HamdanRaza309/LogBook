@@ -23,10 +23,10 @@ export default function AddNote(props) {
             <h2 style={{ color: '#ff9770 ', fontWeight: 'bold' }}>Add a Note</h2>
             <form>
                 <div className="form-floating mb-3">
-                    <input type="text" className="form-control" id="username" name='title' placeholder="Username"
+                    <input type="text" className="form-control" id="title" name='title' placeholder="Title"
                         value={note.title} aria-describedby="emailHelp" onChange={handleOnChange} minLength={5} required
                         style={{ paddingLeft: '65px' }} />
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="title">Title</label>
                 </div>
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="description" name='description' placeholder="Description"

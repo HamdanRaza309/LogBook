@@ -4,41 +4,7 @@ body {
     background: #fffaff; /* Updated */
 }
 
-/* About */
-.about-us {
-    color: #333;
-  }
-  
-  .hero {
-    background-color: #70d6ff; /* Hero section background color */
-    color: #fff; /* Text color */
-  }
-  
-  .mission, .history {
-    color: #333;
-  }
-  
-  .team img {
-    border-radius: 50%;
-  }
-  
-  .team .card {
-    border: none;
-  }
-  
-  .team .card-body {
-    text-align: center;
-  }
-  
-  .contact {
-    background-color: #e9ff70; /* Contact section background color */
-  }
-  
-  .contact a {
-    color: #ff70a6; /* Contact email color */
-    text-decoration: none;
-  }
-  
+
 /* Form Floating */
 .form-floating > label {
     color: #000; /* Updated */

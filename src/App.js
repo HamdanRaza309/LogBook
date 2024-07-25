@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About'; // Corrected import
@@ -27,19 +27,32 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <Alert alert={alert} />
-          <div className="container">
-            <Routes>
-              <Route exact path="/" element={<Home showAlert={showAlert} />} />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/login" element={<LogIn showAlert={showAlert} />} />
-              <Route exact path="/signup" element={<SignUp showAlert={showAlert} />} />
-            </Routes>
-          </div>
+          <AlertWrapper alert={alert} />
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route
+              path="*"
+              element={
+                <div className="container">
+                  <Routes>
+                    <Route exact path="/" element={<Home showAlert={showAlert} />} />
+                    <Route exact path="/login" element={<LogIn showAlert={showAlert} />} />
+                    <Route exact path="/signup" element={<SignUp showAlert={showAlert} />} />
+                  </Routes>
+                </div>
+              }
+            />
+          </Routes>
         </Router>
       </NoteState>
     </>
   );
+}
+
+function AlertWrapper({ alert }) {
+  const location = useLocation();
+  // Only show Alert if the current path is not '/about'
+  return location.pathname !== '/about' ? <Alert alert={alert} /> : null;
 }
 
 export default App;
